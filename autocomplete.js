@@ -139,7 +139,7 @@
               var div = render(item, inputValue);
               if (div) {
                   div.addEventListener("click", function (ev) {
-                      settings.onSelect(item, input);
+                      settings.onSelect(ev, item, input);
                       clear();
                       ev.preventDefault();
                       ev.stopPropagation();
@@ -284,7 +284,7 @@
               return;
           }
           if (keyCode === 13 /* Enter */ && selected) {
-              settings.onSelect(selected, input);
+              settings.onSelect(ev, selected, input);
               clear();
           }
       }
